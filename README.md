@@ -1,4 +1,6 @@
-# EdgeChipLab_CPU_v1 — RISC-V RV32I Architectural Compliance (ACT v3.0)
+EdgeChipLab_CPU_v1 Successfully Passed RISC-V RV32I ACT v3.0
+
+Verified by cycle-by-cycle bit-true regression against Spike reference model.
 
 ## Official Public Compliance Report
 
