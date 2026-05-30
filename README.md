@@ -1,4 +1,4 @@
-EdgeChipLab_CPU_v1 Successfully Passed RISC-V RV32I ACT v3.0
+# EdgeChipLab_CPU_v1 Successfully Passed RISC-V RV32I ACT v3.0
 
 Verified by cycle-by-cycle bit-true regression against Spike reference model.
 
@@ -23,7 +23,8 @@ This RTL core has successfully completed the **RISC-V RV32I Architectural Compat
 | Passed          |                    47 |
 | Waived          |                     1 |
 
-**Result:**
+### Result
+
 ✅ **EdgeChipLab_CPU_v1 successfully passed RV32I ACT v3.0**
 
 ---
@@ -38,7 +39,7 @@ The repository maintainer confirmed:
 
 > “Congratulations on building a core that passes the RV32I ACTs v. 3.0!”
 
-This public acknowledgement is meaningful validation of the hardware verification result.
+This public acknowledgement provides meaningful external validation of the hardware verification result.
 
 ---
 
@@ -48,24 +49,25 @@ This compliance milestone is part of the broader EdgeChipLab semiconductor syste
 
 **RTL Design → RISC-V CPU → Architectural Verification → NPU Integration → FPGA Edge AI System**
 
-The verified CPU core is planned for integration with our custom RTL-based AI NPU into a memory-mapped FPGA SoC platform.
+The verified CPU core is planned for integration with our custom RTL-based AI NPU into a complete memory-mapped FPGA SoC platform.
 
 ---
 
 ## Related Book
 
-**AI NPU System Design with Python and Verilog**
-by Roger Kim (Hyo Seob Kim)
+### AI NPU System Design with Python and Verilog
+
+**Roger Kim (Hyo Seob Kim)**
 
 Amazon:
 https://www.amazon.com/dp/B0GLQVJWMK
 
 The book explains:
 
-* custom RTL NPU design
+* Custom RTL NPU design
 * Python + Verilog bit-true verification
 * FPGA implementation
-* end-to-end hardware system construction
+* End-to-end hardware system construction
 
 This knowledge directly supports the upcoming:
 
@@ -88,6 +90,3 @@ This knowledge directly supports the upcoming:
 
 **EdgeChipLab**
 https://www.semiconductorschool.co.kr
-
-
-========================================================================
