@@ -1,40 +1,91 @@
-========================================================================
-RISC-V ARCHITECTURE COMPLIANCE TARGET INFORMATION
-========================================================================
+# EdgeChipLab_CPU_v1 — RISC-V RV32I Architectural Compliance (ACT v3.0)
 
-[TARGET SPECIFICATIONS]
-- Target Name          : EdgeChipLab_CPU_v1
-- Device Type          : RTL (Verilog HDL) / FPGA Target Implementation
-- ISA String           : RV32I (Base Integer Instruction Set, 32-bit)
-- Extensions Supported : None (Pure RV32I, No C-Extension)
-- Privilege Levels     : Machine Mode (M-Mode) Only
-- Simulation Platform  : Xilinx Vivado Simulator (xsim) 2023.1
-- Reference Model      : Spike (RISC-V ISA Simulator)
-- Verification Type    : 100% Bit-True Core Regression Test
+## Official Public Compliance Report
 
-[TEST RESULTS SUMMARY]
-- Total Test Suites    : 48
-- Passed (Bit-True)    : 47
-- Waived (SW Exception): 1 (I-MISALIGN_JMP-01)
+**EdgeChipLab_CPU_v1** is a custom pure-Verilog educational RISC-V CPU core developed at **EdgeChipLab**.
 
-[TEST EXCEPTIONS & WAIVERS]
-- Test Case: I-MISALIGN_JMP-01.S
-  Status   : WAIVED
-  Rationale: 
-  The RTL Hardware Core perfectly complies with the pure RV32I specification.
-  It correctly detects misaligned jump targets, asserts the corresponding 
-  Trap Request, and captures the exact faulting address into the 'mtval' CSR.
-  
-  However, the legacy compliance test software environment contains a logical 
-  bug in its trap-handler recovery path when the C-Extension (Compressed 
-  Instructions) is disabled. The software handler incorrectly subtracts 2 
-  from 'mtval' and overwrites 'mepc', creating an erroneous branch that forces 
-  the hardware into an infinite loop back to the faulting instruction.
-  
-  Since this architectural hang is fully verified via cycle-by-cycle pipeline 
-  X-ray tracing to be a software-induced recovery failure and not a hardware RTL 
-  defect, this test case is officially waived for EdgeChipLab_CPU_v1.
-  Detailed hardware execution traces are provided in the accompanying 
-  'I-MISALIGN_JMP-01.WAIVER.txt' file.
+This RTL core has successfully completed the **RISC-V RV32I Architectural Compatibility Tests (ACT v3.0)** using cycle-by-cycle bit-true verification against the Spike reference model.
+
+---
+
+## Compliance Summary
+
+| Item            |                Result |
+| --------------- | --------------------: |
+| ISA             |                 RV32I |
+| RTL Language    |           Verilog HDL |
+| Privilege Mode  | Machine Mode (M-Mode) |
+| Simulator       |    Vivado xsim 2023.1 |
+| Reference Model |                 Spike |
+| Total Tests     |                    48 |
+| Passed          |                    47 |
+| Waived          |                     1 |
+
+**Result:**
+✅ **EdgeChipLab_CPU_v1 successfully passed RV32I ACT v3.0**
+
+---
+
+## Public Acknowledgement
+
+Official RISC-V Arch-Test Issue:
+
+https://github.com/riscv/riscv-arch-test/issues/1600
+
+The repository maintainer confirmed:
+
+> “Congratulations on building a core that passes the RV32I ACTs v. 3.0!”
+
+This public acknowledgement is meaningful validation of the hardware verification result.
+
+---
+
+## Educational Roadmap
+
+This compliance milestone is part of the broader EdgeChipLab semiconductor system education roadmap:
+
+**RTL Design → RISC-V CPU → Architectural Verification → NPU Integration → FPGA Edge AI System**
+
+The verified CPU core is planned for integration with our custom RTL-based AI NPU into a memory-mapped FPGA SoC platform.
+
+---
+
+## Related Book
+
+**AI NPU System Design with Python and Verilog**
+by Roger Kim (Hyo Seob Kim)
+
+Amazon:
+https://www.amazon.com/dp/B0GLQVJWMK
+
+The book explains:
+
+* custom RTL NPU design
+* Python + Verilog bit-true verification
+* FPGA implementation
+* end-to-end hardware system construction
+
+This knowledge directly supports the upcoming:
+
+**Verified RISC-V CPU + Custom NPU + Memory-Mapped SoC + FPGA Integration**
+
+---
+
+## Repository Contents
+
+* README.md
+* EdgeChipLab_RV32I_Compliance_Submission.zip
+* Signature outputs
+* Target specification
+* Waiver analysis
+* Bit-true verification traces
+
+---
+
+## Maintained by
+
+**EdgeChipLab**
+https://www.semiconductorschool.co.kr
+
 
 ========================================================================
